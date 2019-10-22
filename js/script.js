@@ -5,6 +5,8 @@ let answer = [
   document.querySelector('.nee')
 ];
 
+console.log(answer);
+
 let recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
 recognition.lang = 'nl';
@@ -14,7 +16,7 @@ recognition.onresult = function(event)
   if(last_result > played)
   {
     played = last_result;
-    if(event.results[last_result][0].transcript.toLowerCase().indexOf("test") > -1)
+    if(event.results[last_result][0].transcript.toLowerCase().indexOf("joyce") > -1)
     {
       let nmbr = Math.floor(Math.random() * 2);
       let obj = answer[nmbr];
